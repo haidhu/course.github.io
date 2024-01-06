@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>訂便當網站</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .comments {
+            margin-top: 20px;
+        }
+    </style>
+	
+	<style>
+        .comments {
+            margin-top: 20px;
+        }
+        #commentList {
+            margin-top: 20px;
+        }
+        .comment {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .comment strong {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">訂便當</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="./test.html">首頁 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./test2.html">評論區</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">推薦餐廳</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="mb-4">意見評論區</h1>
+
+
+    <div class="comments mt-5">
+
+        <h3>新增評論</h3>
+        <div class="form-group">
+            <label for="commentName">姓名：</label>
+            <input type="text" class="form-control" id="commentName" placeholder="請輸入您的姓名" required>
+        </div>
+        <div class="form-group">
+            <label for="commentContent">評論內容：</label>
+            <textarea class="form-control" id="commentContent" rows="3" placeholder="請輸入評論內容" required></textarea>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="addComment()">新增評論</button>
+    </div>
+    <h2>評論區</h2>
+    <div id="commentList"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    function addComment() {
+        var name = document.getElementById('commentName').value;
+        var content = document.getElementById('commentContent').value;
+
+        var commentList = document.getElementById('commentList');
+        var commentDiv = document.createElement('div');
+        commentDiv.className = 'comment';
+        commentDiv.innerHTML = '<strong>' + name + ':</strong> ' + content;
+        commentList.appendChild(commentDiv);
+
+        // 清空輸入框
+        document.getElementById('commentName').value = '';
+        document.getElementById('commentContent').value = '';
+
+        // 可以將評論數據提交到後端進行保存
+        // 這裡僅為前端實現，實際應用中需要後端支持
+    }
+</script>
+
+</body>
+</html>
