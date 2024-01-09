@@ -61,7 +61,7 @@
           for (var r=0 ; r<rows ; r++) {
               //str += data.getFormattedValue(r,0) + "(" +  data.getFormattedValue(r,1) + ")" + " 訂 " +  data.getFormattedValue(r,2) + " : " + data.getFormattedValue(r,3) + "個 <br/>";
           
-              str += "<strong>" + data.getFormattedValue(r,1)+ " :  </strong>"+ data.getFormattedValue(r,2) + "     <span style='size: 12px; color: orange;' class='material-icons star'>star</span>： " +  data.getFormattedValue(r,3) + "<br/>";
+              str += "<strong>" + data.getFormattedValue(r,1)+ " :  </strong>"+ data.getFormattedValue(r,2) + "     <span style='size: 12px; color: orange;' class='material-icons star'>star</span>" +  data.getFormattedValue(r,3) + "<br/>";
           }
             
           document.getElementById("commentList").innerHTML = str;
